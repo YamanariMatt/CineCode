@@ -1,5 +1,7 @@
 # CineCode
 
+https://yamanarimatt.github.io/CineCode/
+
 CineCode é uma aplicação web estática para explorar filmes e artistas usando a API do OMDb. Ela oferece pesquisa por títulos e pessoas, categorias temáticas, previews de filmes, detalhes em modal e gerenciamento de favoritos localmente no navegador.
 
 ## ✨ Recursos
