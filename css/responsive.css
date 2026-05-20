@@ -1,0 +1,24 @@
+@media (max-width: 768px) {
+  .navbar__inner { padding:0 16px; }
+  .navbar__logo-text { font-size:20px; letter-spacing:3px; }
+  .navbar__right { display:none; }
+  .nav-btn { padding:6px 10px; font-size:12px; }
+  .hero { padding:48px 16px 40px; }
+  .main { padding:32px 16px 80px; }
+  .movie-grid { grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:12px; }
+  .artists-grid { grid-template-columns:repeat(auto-fill,minmax(130px,1fr)); gap:12px; }
+  .modal__poster-col { width:100%; }
+  .modal__poster { max-height:300px; object-position:top; }
+  .modal__info-col { padding:18px 18px 24px; }
+  .modal__title { font-size:24px; }
+  .artist-modal__movies { grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); padding:0 16px 24px; }
+  .artist-modal__hero { padding:20px 16px 0; }
+  .artist-modal__bio-wrap { padding:16px 16px 0; }
+  .artist-modal__section-title { padding:0 16px; }
+  .search-bar__tabs { display:none; }
+}
+@media (max-width: 480px) {
+  .hero__title { font-size:36px; }
+  .movie-grid { grid-template-columns:repeat(2,1fr); }
+  .artists-grid { grid-template-columns:repeat(2,1fr); }
+}

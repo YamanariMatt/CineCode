@@ -1,0 +1,95 @@
+/* ── Keyframes ─────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity:0; }
+  to   { opacity:1; }
+}
+@keyframes scaleIn {
+  from { opacity:0; transform:scale(0.93); }
+  to   { opacity:1; transform:scale(1); }
+}
+@keyframes slideInRight {
+  from { opacity:0; transform:translateX(32px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+@keyframes spin {
+  to { transform:rotate(360deg); }
+}
+@keyframes heartPop {
+  0%   { transform:scale(1); }
+  35%  { transform:scale(1.55); }
+  65%  { transform:scale(0.85); }
+  100% { transform:scale(1); }
+}
+@keyframes wordReveal {
+  from { opacity:0; transform:translateY(28px) skewY(4deg); }
+  to   { opacity:1; transform:translateY(0) skewY(0); }
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:0.5; transform:scale(0.85); }
+}
+@keyframes glowPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(242,196,90,0); }
+  50%      { box-shadow: 0 0 18px 4px rgba(242,196,90,0.18); }
+}
+@keyframes borderSpin {
+  to { transform:rotate(360deg); }
+}
+@keyframes floatY {
+  0%,100% { transform:translateY(0px); }
+  50%      { transform:translateY(-8px); }
+}
+@keyframes dotBlink {
+  0%,100% { opacity:1; }
+  50%      { opacity:0.2; }
+}
+@keyframes cardEntrance {
+  from { opacity:0; transform:translateY(16px) scale(0.97); }
+  to   { opacity:1; transform:translateY(0) scale(1); }
+}
+@keyframes toastIn {
+  from { opacity:0; transform:translateX(-50%) translateY(12px); }
+  to   { opacity:1; transform:translateX(-50%) translateY(0); }
+}
+
+/* ── Utility classes ───────────────────────────── */
+.anim-fadeUp   { animation: fadeUp   0.4s ease both; }
+.anim-scaleIn  { animation: scaleIn  0.22s ease both; }
+.anim-slideR   { animation: slideInRight 0.35s ease both; }
+.heart-pop     { animation: heartPop 0.38s ease; }
+
+.spinner {
+  width:36px; height:36px;
+  border:3px solid var(--border);
+  border-top-color:var(--gold);
+  border-radius:50%;
+  animation:spin 0.75s linear infinite;
+}
+
+/* staggered card entrance */
+.movie-card { animation: cardEntrance 0.36s ease both; }
+.movie-card:nth-child(1)  { animation-delay: 0ms; }
+.movie-card:nth-child(2)  { animation-delay: 40ms; }
+.movie-card:nth-child(3)  { animation-delay: 80ms; }
+.movie-card:nth-child(4)  { animation-delay: 120ms; }
+.movie-card:nth-child(5)  { animation-delay: 160ms; }
+.movie-card:nth-child(6)  { animation-delay: 200ms; }
+.movie-card:nth-child(7)  { animation-delay: 240ms; }
+.movie-card:nth-child(8)  { animation-delay: 280ms; }
+.movie-card:nth-child(n+9){ animation-delay: 320ms; }
+
+.artist-card { animation: cardEntrance 0.36s ease both; }
+.artist-card:nth-child(1)  { animation-delay: 0ms; }
+.artist-card:nth-child(2)  { animation-delay: 60ms; }
+.artist-card:nth-child(3)  { animation-delay: 120ms; }
+.artist-card:nth-child(4)  { animation-delay: 180ms; }
+.artist-card:nth-child(5)  { animation-delay: 240ms; }
+.artist-card:nth-child(n+6){ animation-delay: 300ms; }

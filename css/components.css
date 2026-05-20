@@ -1,0 +1,169 @@
+/* ── NAV BUTTON ─────────────────────────── */
+.nav-btn {
+  background:transparent; border:1px solid transparent;
+  color:var(--text2); padding:7px 16px; border-radius:8px;
+  font-size:13px; font-weight:400; letter-spacing:0.3px;
+  display:flex; align-items:center; gap:6px;
+  transition:all var(--ease);
+}
+.nav-btn:hover { color:var(--text); background:var(--surface); }
+.nav-btn.active {
+  color:var(--text); background:var(--surface2);
+  border-color:var(--border2); font-weight:600;
+}
+.fav-badge {
+  background:var(--gold); color:var(--bg);
+  font-size:10px; font-weight:700;
+  padding:1px 7px; border-radius:var(--radius-full); line-height:1.6;
+}
+
+/* ── MOVIE CARD ─────────────────────────── */
+.movie-card {
+  border-radius:var(--radius); overflow:hidden;
+  background:var(--surface); border:1px solid var(--border);
+  cursor:pointer; position:relative;
+  transition:transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+  flex-shrink:0;
+}
+.movie-card:hover {
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 20px 50px rgba(0,0,0,0.65), 0 0 0 1px var(--border2);
+  border-color:var(--border2);
+}
+.movie-card__poster-wrap { position:relative; padding-top:150%; overflow:hidden; }
+.movie-card__poster {
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  transition:transform 0.4s ease;
+}
+.movie-card:hover .movie-card__poster { transform:scale(1.06); }
+.movie-card__overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(7,7,13,0.8) 0%, rgba(7,7,13,0.1) 50%, transparent 100%);
+  transition:opacity var(--ease);
+}
+.movie-card__year {
+  position:absolute; top:9px; left:9px;
+  background:var(--gold); color:var(--bg);
+  font-size:10px; font-weight:700; padding:2px 8px; border-radius:5px;
+}
+.movie-card__fav-btn {
+  position:absolute; top:7px; right:7px;
+  width:32px; height:32px; border-radius:50%; border:none;
+  background:rgba(7,7,13,0.68); font-size:14px;
+  display:flex; align-items:center; justify-content:center;
+  backdrop-filter:blur(6px);
+  transition:transform 0.18s ease, background var(--ease);
+}
+.movie-card__fav-btn:hover { transform:scale(1.2); background:rgba(7,7,13,0.9); }
+.movie-card__info { padding:10px 12px 13px; }
+.movie-card__title {
+  font-size:13px; font-weight:500; color:var(--text);
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  margin-bottom:3px; line-height:1.4;
+}
+.movie-card__meta { font-size:11px; color:var(--text3); }
+
+/* skeleton */
+.movie-card--skeleton .movie-card__poster-wrap {
+  background:linear-gradient(90deg, var(--surface2) 25%, var(--bg3) 50%, var(--surface2) 75%);
+  background-size:200% 100%;
+  animation:shimmer 1.5s infinite;
+}
+.movie-card--skeleton .movie-card__title {
+  height:12px; background:var(--surface2); border-radius:4px; width:70%; margin-bottom:8px;
+}
+.movie-card--skeleton .movie-card__meta {
+  height:10px; background:var(--border); border-radius:4px; width:40%;
+}
+
+/* ── ARTIST CARD ────────────────────────── */
+.artist-card {
+  border-radius:var(--radius); overflow:hidden;
+  background:var(--surface); border:1px solid var(--border);
+  cursor:pointer; text-align:center;
+  padding:22px 14px 16px;
+  transition:transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+}
+.artist-card:hover {
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:0 16px 40px rgba(0,0,0,0.55), 0 0 0 1px var(--border2);
+  border-color:var(--gold);
+}
+.artist-card__avatar-wrap {
+  width:90px; height:90px; border-radius:50%; overflow:hidden;
+  margin:0 auto 14px;
+  border:2px solid var(--border2);
+  transition:border-color var(--ease);
+  position:relative;
+}
+.artist-card:hover .artist-card__avatar-wrap { border-color:var(--gold); }
+.artist-card__avatar {
+  width:100%; height:100%; object-fit:cover; object-position:top;
+  transition:transform 0.4s ease;
+}
+.artist-card:hover .artist-card__avatar { transform:scale(1.08); }
+.artist-card__name {
+  font-size:13px; font-weight:600; color:var(--text);
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap; margin-bottom:4px;
+}
+.artist-card__role { font-size:11px; color:var(--text3); }
+.artist-card__count {
+  display:inline-block; margin-top:8px;
+  background:var(--surface2); border:1px solid var(--border);
+  font-size:10px; color:var(--text2); padding:2px 8px; border-radius:var(--radius-full);
+}
+
+/* skeleton artist */
+.artist-card--skeleton .artist-card__avatar-wrap {
+  background:linear-gradient(90deg, var(--surface2) 25%, var(--bg3) 50%, var(--surface2) 75%);
+  background-size:200% 100%; animation:shimmer 1.5s infinite;
+}
+.artist-card--skeleton .artist-card__name {
+  height:12px; background:var(--surface2); border-radius:4px; width:80%; margin:0 auto 8px;
+}
+.artist-card--skeleton .artist-card__role {
+  height:10px; background:var(--border); border-radius:4px; width:50%; margin:0 auto;
+}
+
+.artists-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(148px, 1fr));
+  gap:16px; margin-bottom:16px;
+}
+.artists-featured-title {
+  font-family:var(--font-d); font-size:20px;
+  letter-spacing:2px; color:var(--text); margin-bottom:18px;
+  display:flex; align-items:center; gap:14px;
+}
+.artists-featured-title::after {
+  content:''; flex:1; height:1px;
+  background:linear-gradient(to right, var(--border2), transparent);
+}
+
+/* ── LOAD MORE ──────────────────────────── */
+.btn-load-more {
+  background:var(--surface2); border:1px solid var(--border);
+  color:var(--text); padding:12px 36px; border-radius:var(--radius-full);
+  font-size:14px; font-family:var(--font-b); font-weight:500;
+  display:inline-flex; align-items:center; gap:8px;
+  transition:border-color var(--ease), transform var(--ease), background var(--ease);
+}
+.btn-load-more:hover {
+  border-color:var(--gold); background:var(--bg3); transform:translateY(-2px);
+}
+
+/* ── TOAST ──────────────────────────────── */
+.toast {
+  position:fixed; bottom:32px; left:50%; z-index:9999;
+  transform:translateX(-50%) translateY(14px);
+  background:var(--surface2); border:1px solid var(--border2);
+  color:var(--text); font-size:13px; font-weight:500;
+  padding:11px 24px; border-radius:var(--radius-full);
+  opacity:0; pointer-events:none;
+  transition:opacity 0.22s, transform 0.22s;
+  white-space:nowrap;
+}
+.toast.show {
+  opacity:1; transform:translateX(-50%) translateY(0);
+  animation:toastIn 0.22s ease;
+}

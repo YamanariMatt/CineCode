@@ -1,0 +1,23 @@
+:root {
+  --bg:       #07070d;
+  --bg2:      #0c0c16;
+  --bg3:      #10101e;
+  --surface:  #121220;
+  --surface2: #1a1a2e;
+  --border:   #1e1e32;
+  --border2:  #2a2a44;
+  --text:     #eeeef8;
+  --text2:    #8888b0;
+  --text3:    #44446a;
+  --gold:     #f2c45a;
+  --gold2:    #c49820;
+  --red:      #e05060;
+  --green:    #42d68a;
+  --radius:   12px;
+  --radius-lg:18px;
+  --radius-full: 9999px;
+  --shadow:   0 8px 32px rgba(0,0,0,0.6);
+  --font-d:   'Bebas Neue', sans-serif;
+  --font-b:   'Sora', sans-serif;
+  --ease:     0.18s ease;
+}
